@@ -1,0 +1,25 @@
+<?php
+
+$pid = fopen('pid', 'r');
+echo "Killing $pid";
+$cmd ="/bin/kill -9 $pid";
+exec($cmd, $output, $ret_var);
+sleep 2;
+/*if($ret_var == 0) {
+   $cmd2="python /var/www/html/app.py &";
+   exec($cmd2, $output2, $ret_val2);
+   sleep 5;
+   if($ret_val2 == 0) {
+	$pid_file = fopen('pid', 'w');
+        fwrite($pid_file, $output2);
+	fclose($pidfile);
+   } else {
+	echo "Failed to restart";
+   }
+} else {
+   echo " Failed to kill";
+}
+*/
+
+echo "<br> Hello World";
+?>
